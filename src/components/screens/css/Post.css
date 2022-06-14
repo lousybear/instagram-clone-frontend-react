@@ -1,0 +1,110 @@
+.post__container {
+    margin: 10px auto 20px;
+    width: 500px;
+    height: fit-content;
+    object-fit: contain;
+    background-color: #fff;
+    border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+    border-radius: 10px;
+}
+.post__header {
+    display: flex;
+    flex-direction: row;
+    
+}
+.post_usericon {
+    padding: 10px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.post__image{
+   display: block;
+   width: 100%;
+   object-fit: contain; 
+}
+.post_username {
+    text-decoration: none;
+    font-size: 15px;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post__action__icons {
+    padding: 12px 12px 6px 12px;
+    height: 1.6rem;
+    cursor: pointer;
+}
+.save {
+    float: right;
+}
+.post__likes {
+    padding-left: 12px;
+    display: inline !important;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+}
+.post__caption__footer {
+    padding: 5px 12px 5px 12px;
+    margin: 0;
+}
+.post__caption__text{
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.post__caption__username{
+    font-size: 14px;
+    font-weight: 600;
+}
+.post__comment__footer {
+    width: 100%;
+    margin-top: 5px;
+    border-top: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.post__comment__emoji {
+    padding: 10px 12px 10px 12px;
+    cursor: pointer;
+}
+
+.post__comment__textbox {
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: max-content;
+    font-size: 15px;
+    color: rgb(38, 38, 38);
+    font-family: var(--font-family-system);
+    background: none;
+    border: none;
+    resize: none;
+    overflow: hidden;
+    padding: 10px 12px 10px 12px;
+}
+.post__comment__textbox:active {
+    background: none;
+        border: none;
+        resize: none;
+        overflow: hidden;
+}
+.post__comment__button {
+    border: none;
+    background: transparent;
+    color: #0095f6;
+    font-weight: 600;
+    text-decoration: none;
+    float: right;
+    height: 24px;
+    padding: 10px 12px 10px 12px;
+    cursor: pointer;
+}
