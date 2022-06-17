@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
 import './css/Login.css';
 
 function Login() {
@@ -14,21 +15,27 @@ function Login() {
     };
 
     const signInUser = () => {
-        fetch('/user/signIn', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username,
-                password,
-            }),
-        })
-            .then((res) => res.json())
-            .then((data) =>
-                data ? routeChange() : alert('Authentication Failed')
-            )
-            .catch((err) => console.log('error' + err));
+        // fetch('/user/signIn', {
+        //     method: 'post',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         username,
+        //         password,
+        //     }),
+        // })
+        //     .then((res) => res.json())
+        //     .then((data) =>
+        //         data ? routeChange() : alert('Authentication Failed')
+        //     )
+        //     .catch((err) => console.log('error' + err));
+        Auth.signIn(username, password)
+            .then((user) => {
+                console.log(user);
+                routeChange();
+            })
+            .catch((err) => console.log(err));
     };
 
     return (

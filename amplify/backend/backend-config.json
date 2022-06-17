@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "instagramclonefronte94b3ffe1": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
