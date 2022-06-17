@@ -7,6 +7,25 @@ function SignUp() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+
+    const signUpUser = () => {
+        fetch('/user/signUp', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name,
+                username,
+                password,
+                emailOrPhone,
+            }),
+        })
+            .then((res) => res.json())
+            .then((d) => console.log(d))
+            .catch((err) => console.log(err));
+    };
+
     return (
         <div className='signup-container'>
             <div className='signup-card'>
@@ -43,7 +62,9 @@ function SignUp() {
                     value={password}
                     onChange={(d) => setPassword(d.target.value)}
                 />
-                <button className='signup-button'>Sign Up</button>
+                <button className='signup-button' onClick={() => signUpUser()}>
+                    Sign Up
+                </button>
             </div>
             <div className='login-footer'>
                 <p className='login-footer-text'>
